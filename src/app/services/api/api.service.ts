@@ -25,6 +25,10 @@ export class ApiService {
       return this.http.get<T>(this.url + path);
     }
 
+    public delete<T>(path: string): Observable<T> {
+      return this.http.delete<T>(this.url + path);
+    }
+
     public post<T>(path: string, data: any): Observable<T> {
       return this.http.post<T>(this.url + path, data);
     }

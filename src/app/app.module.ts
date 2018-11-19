@@ -8,6 +8,7 @@ import { AvesComponent } from './pages/aves/aves.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { ApiService } from './services/api/api.service';
 import { HttpClientModule } from '@angular/common/http';
+import { SweetAlert2Module } from '@toverux/ngx-sweetalert2';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    SweetAlert2Module.forRoot()
   ],
   providers: [
     ApiService,

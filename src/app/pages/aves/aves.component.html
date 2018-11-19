@@ -1,6 +1,6 @@
 <div class="card">
     <div class="col-8 offset-2">
-        <h2 class="mb-3 text-center text-info">Historial de Búsquedas</h2>
+        <h2 class="mb-3 text-center text-info">Listado de Aves</h2>
         <table class="table">
             <thead class="thead-dark">
                 <tr>
@@ -9,7 +9,9 @@
                     <th scope="col">Nombre cientifico</th>
                     <th scope="col">Paises</th>
                     <th scope="col">Zonas</th>
-                  </tr>
+                    <th scope="col">Editar</th>
+                    <th scope="col">Eliminar</th>
+                </tr>
             </thead>
             <tbody>
                 <tr *ngFor="let ave of aves; let i = index">
@@ -17,7 +19,14 @@
                     <td>Estación {{ ave.dsNombreComun }}</td>
                     <td>Estación {{ ave.dsNombreCientifico }}</td>
                     <td>
-                      <span *ngFor="let pais of ave.paises" >{{pais.csNombre}}</span>
+                        <span *ngFor="let pais of ave.paises">{{pais.csNombre}}</span>
+                    </td>
+                    <td>Zonas</td>
+                    <td>
+                        <button class="btn btn-sm btn-success">Editar</button>
+                    </td>
+                    <td>
+                        <button class="btn btn-sm btn-danger" (click)="eliminarAve(ave.cdAve)">Eliminar</button>
                     </td>
                 </tr>
             </tbody>

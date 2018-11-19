@@ -15,4 +15,8 @@ export class AvesService {
   public getAves(): Observable<any> {
     return this.apiService.get<any>('aves');
   }
+
+  public deleteAves(cdAve: string): Observable<any> {
+    return this.apiService.delete<any>('aves/'+cdAve);
+  }
 }
