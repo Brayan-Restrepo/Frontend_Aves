@@ -1,0 +1,26 @@
+<div class="card">
+    <div class="col-8 offset-2">
+        <h2 class="mb-3 text-center text-info">Historial de Búsquedas</h2>
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Nombre común</th>
+                    <th scope="col">Nombre cientifico</th>
+                    <th scope="col">Paises</th>
+                    <th scope="col">Zonas</th>
+                  </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let ave of aves; let i = index">
+                    <th scope="row">{{ i+1 }}</th>
+                    <td>Estación {{ ave.dsNombreComun }}</td>
+                    <td>Estación {{ ave.dsNombreCientifico }}</td>
+                    <td>
+                      <span *ngFor="let pais of ave.paises" >{{pais.csNombre}}</span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
